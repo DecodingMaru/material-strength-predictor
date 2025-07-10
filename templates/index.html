@@ -1,0 +1,60 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Material Strength Predictor</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #1f3b40, #2a3e87);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        color: #fff;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin-bottom: 2rem;
+      }
+      a.button {
+        background-color: #4090d1;
+        padding: 15px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 1rem;
+        color: white;
+        transition: background-color 0.3s;
+      }
+      a.button:hover {
+        background-color: #2f6ca1;
+      }
+      .gradient-text {
+        font-size: 4em;
+        background-image: linear-gradient(to right, #2d9bd6, #2da3b8);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="gradient-text">Welcome to Material Strength Predictor</h1>
+    <p>
+      This tool predicts the tensile strength (in MPa) of a material like steel
+      or ferrous alloys based on its chemical composition. Enter values like
+      Carbon, Manganese, Silicon, etc., and get instant predictions.
+    </p>
+    <a class="button" href="/predict-form">Go to Prediction Page</a>
+  </body>
+</html>

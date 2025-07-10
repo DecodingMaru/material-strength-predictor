@@ -1,0 +1,236 @@
+<!-- predict.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Predict Material Strength</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 40px;
+        background: #141e30;
+        font-family: Arial, sans-serif;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      form {
+        background: #243b55;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 400px;
+      }
+      h2 {
+        margin-top: 0;
+        text-align: center;
+      }
+      input[type="number"] {
+        padding: 10px;
+        margin: 10px 0;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        padding: 10px 20px;
+        background: #00c6ff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+      }
+      input[type="submit"]:hover {
+        background-color: #0079a1;
+      }
+      .result {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        color: #2dcfec;
+        text-align: center;
+      }
+      .input-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .input-row input {
+        flex: 1 1 calc(50% - 10px);
+      }
+
+      /* Responsive: stack inputs vertically on small screens */
+      @media screen and (max-width: 600px) {
+        .input-row input {
+          flex: 1 1 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form id="predictionForm">
+      <h2>Enter Material Composition</h2>
+
+      <div class="input-row">
+        <input
+          type="number"
+          name="carbon"
+          step="0.01"
+          placeholder="Carbon (%)"
+          required
+        />
+        <input
+          type="number"
+          name="manganese"
+          step="0.01"
+          placeholder="Manganese (%)"
+          required
+        />
+      </div>
+
+      <div class="input-row">
+        <input
+          type="number"
+          name="silicon"
+          step="0.01"
+          placeholder="Silicon (%)"
+          required
+        />
+        <input
+          type="number"
+          name="nickel"
+          step="0.01"
+          placeholder="Nickel (%)"
+          required
+        />
+      </div>
+
+      <div class="input-row">
+        <input
+          type="number"
+          name="chromium"
+          step="0.01"
+          placeholder="Chromium (%)"
+          required
+        />
+        <input
+          type="number"
+          name="copper"
+          step="0.01"
+          placeholder="Copper (%)"
+          required
+        />
+      </div>
+
+      <div class="input-row">
+        <input
+          type="number"
+          name="zinc"
+          step="0.01"
+          placeholder="Zinc (%)"
+          required
+        />
+        <input
+          type="number"
+          name="boron"
+          step="0.01"
+          placeholder="Boron (%)"
+          required
+        />
+      </div>
+
+      <div class="input-row">
+        <input
+          type="number"
+          name="molybdenum"
+          step="0.01"
+          placeholder="Molybdenum (%)"
+          required
+        />
+        <input
+          type="number"
+          name="phosphorus"
+          step="0.01"
+          placeholder="Phosphorus (%)"
+          required
+        />
+      </div>
+
+      <div class="input-row">
+        <input
+          type="number"
+          name="sulfur"
+          step="0.01"
+          placeholder="Sulfur (%)"
+          required
+        />
+        <input
+          type="number"
+          name="titanium"
+          step="0.01"
+          placeholder="Titanium (%)"
+          required
+        />
+      </div>
+
+      <div class="input-row">
+        <input
+          type="number"
+          name="vanadium"
+          step="0.01"
+          placeholder="Vanadium (%)"
+          required
+        />
+        <input
+          type="number"
+          name="tin"
+          step="0.01"
+          placeholder="Tin (%)"
+          required
+        />
+      </div>
+
+      <div class="input">
+        <input
+          type="number"
+          name="iron"
+          step="0.01"
+          placeholder="Iron (%)"
+          required
+        />
+        <div style="flex: 1"></div>
+      </div>
+
+      <input type="submit" value="Predict Strength" />
+
+      <div class="result" id="result"></div>
+      {% if strength is not none %}
+      <div class="result">
+        Predicted Tensile Strength: <strong>{{ strength }} MPa</strong>
+      </div>
+      {% endif %}
+    </form>
+
+    <script>
+      const form = document.getElementById("predictionForm");
+      const resultDiv = document.getElementById("result");
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const params = new URLSearchParams(formData).toString();
+
+        fetch(`/predict?${params}`)
+          .then((res) => res.text())
+          .then((htmlw) => {
+            document.body.innerHTML = htmlw;
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -46,21 +46,11 @@ You can enter % composition of the following elements:
 - Tin (Sn)
 - Zinc (Zn)
 
----
-
-## 📷 Screenshots
-
-<p align="center">
-  <img src="https://your-screenshot-link.com/predict.png" width="700">
-</p>
-
----
-
 ## 🛠️ How to Run Locally
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/material-strength-predictor.git
+git clone https://github.com/DecodingMaru/material-strength-predictor.git
 cd material-strength-predictor
 
 # (Optional) Create virtual environment

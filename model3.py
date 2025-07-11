@@ -1,7 +1,7 @@
 import pickle
 import numpy as np
 
-with open("prediction/model.pkl", "rb") as f:
+with open("model.pkl", "rb") as f:
     model = pickle.load(f)
 
 

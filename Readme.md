@@ -2,6 +2,8 @@
 
 A sleek and intelligent web application powered by **Machine Learning + Flask** that predicts the **tensile strength** of a ferrous alloy based on its **chemical composition**. Whether you're an engineering student, researcher, or materials scientist — this tool gives you instant strength predictions from elemental inputs.Note that the output obtained is not fully accurate it has minor error due to smaller dataset provided for machine learning.
 
+running on : https://material-strength-predictor-production.up.railway.app/
+
 ---
 
 ## 🚀 Features

@@ -23,8 +23,8 @@ running on : https://material-strength-predictor-production.up.railway.app/
 | 🧠 ML Model   | RandomForestRegressor (scikit-learn)    |
 | 🖥 Backend     | Python, Flask                           |
 | 💅 Frontend   | HTML5, CSS3, JS                         |
-| 📦 Dataset    | Real/simulated alloy compositions + UTS |
-| 🌐 Deployment | [Render / Railway / Localhost]          |
+| 📦 Dataset    | Real alloy compositions + UTS |
+| 🌐 Deployment | Railway          
 
 ---
 
